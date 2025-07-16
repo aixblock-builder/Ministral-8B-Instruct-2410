@@ -1,0 +1,56 @@
+Map:   0%|          | 0/33 [00:00<?, ? examples/s]Map: 100%|##########| 33/33 [00:00<00:00, 793.90 examples/s]The installed version of bitsandbytes was compiled without GPU support. 8-bit optimizers and GPU quantization are unavailable.
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files:   0%|          | 0/4 [00:20<?, ?it/s]Traceback (most recent call last):
+  File "/mnt/d/Nhan/aixblock-working/ml-backend/Ministral-8B-Instruct-2410/venv/lib/python3.10/site-packages/tqdm/contrib/concurrent.py", line 51, in _executor_map
+    return list(tqdm_class(ex.map(fn, *iterables, chunksize=chunksize), **kwargs))
+  File "/mnt/d/Nhan/aixblock-working/ml-backend/Ministral-8B-Instruct-2410/venv/lib/python3.10/site-packages/tqdm/std.py", line 1181, in __iter__
+    for obj in iterable:
+  File "/mnt/d/Nhan/aixblock-working/ml-backend/Ministral-8B-Instruct-2410/venv/lib/python3.10/concurrent/futures/_base.py", line 608, in result_iterator
+    yield fs.pop().result()
+  File "/mnt/d/Nhan/aixblock-working/ml-backend/Ministral-8B-Instruct-2410/venv/lib/python3.10/concurrent/futures/_base.py", line 440, in result
+    self._condition.wait(timeout)
+  File "/mnt/d/Nhan/aixblock-working/ml-backend/Ministral-8B-Instruct-2410/venv/lib/python3.10/threading.py", line 320, in wait
+    waiter.acquire()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/d/Nhan/aixblock-working/ml-backend/Ministral-8B-Instruct-2410/./run_distributed_accelerate.py", line 226, in <module>
+    model = AutoModelForCausalLM.from_pretrained(
+  File "/mnt/d/Nhan/aixblock-working/ml-backend/Ministral-8B-Instruct-2410/venv/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py", line 600, in from_pretrained
+    return model_class.from_pretrained(
+  File "/mnt/d/Nhan/aixblock-working/ml-backend/Ministral-8B-Instruct-2410/venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 311, in _wrapper
+    return func(*args, **kwargs)
+  File "/mnt/d/Nhan/aixblock-working/ml-backend/Ministral-8B-Instruct-2410/venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 4680, in from_pretrained
+    checkpoint_files, sharded_metadata = _get_resolved_checkpoint_files(
+  File "/mnt/d/Nhan/aixblock-working/ml-backend/Ministral-8B-Instruct-2410/venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1295, in _get_resolved_checkpoint_files
+    checkpoint_files, sharded_metadata = get_checkpoint_shard_files(
+  File "/mnt/d/Nhan/aixblock-working/ml-backend/Ministral-8B-Instruct-2410/venv/lib/python3.10/site-packages/transformers/utils/hub.py", line 1110, in get_checkpoint_shard_files
+    cached_filenames = cached_files(
+  File "/mnt/d/Nhan/aixblock-working/ml-backend/Ministral-8B-Instruct-2410/venv/lib/python3.10/site-packages/transformers/utils/hub.py", line 485, in cached_files
+    snapshot_download(
+  File "/mnt/d/Nhan/aixblock-working/ml-backend/Ministral-8B-Instruct-2410/venv/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/mnt/d/Nhan/aixblock-working/ml-backend/Ministral-8B-Instruct-2410/venv/lib/python3.10/site-packages/huggingface_hub/_snapshot_download.py", line 327, in snapshot_download
+    thread_map(
+  File "/mnt/d/Nhan/aixblock-working/ml-backend/Ministral-8B-Instruct-2410/venv/lib/python3.10/site-packages/tqdm/contrib/concurrent.py", line 69, in thread_map
+    return _executor_map(ThreadPoolExecutor, fn, *iterables, **tqdm_kwargs)
+  File "/mnt/d/Nhan/aixblock-working/ml-backend/Ministral-8B-Instruct-2410/venv/lib/python3.10/site-packages/tqdm/contrib/concurrent.py", line 49, in _executor_map
+    with PoolExecutor(max_workers=max_workers, initializer=tqdm_class.set_lock,
+  File "/mnt/d/Nhan/aixblock-working/ml-backend/Ministral-8B-Instruct-2410/venv/lib/python3.10/concurrent/futures/_base.py", line 636, in __exit__
+    self.shutdown(wait=True)
+  File "/mnt/d/Nhan/aixblock-working/ml-backend/Ministral-8B-Instruct-2410/venv/lib/python3.10/concurrent/futures/thread.py", line 229, in shutdown
+    t.join()
+  File "/mnt/d/Nhan/aixblock-working/ml-backend/Ministral-8B-Instruct-2410/venv/lib/python3.10/threading.py", line 1089, in join
+    self._wait_for_tstate_lock()
+  File "/mnt/d/Nhan/aixblock-working/ml-backend/Ministral-8B-Instruct-2410/venv/lib/python3.10/threading.py", line 1105, in _wait_for_tstate_lock
+    elif lock.acquire(block, timeout):
+KeyboardInterrupt
+Exception ignored in: <module 'threading' from '/mnt/d/Nhan/aixblock-working/ml-backend/Ministral-8B-Instruct-2410/venv/lib/python3.10/threading.py'>Traceback (most recent call last):
+  File "/mnt/d/Nhan/aixblock-working/ml-backend/Ministral-8B-Instruct-2410/venv/lib/python3.10/threading.py", line 1525, in _shutdown
+atexit_call()  File "/mnt/d/Nhan/aixblock-working/ml-backend/Ministral-8B-Instruct-2410/venv/lib/python3.10/concurrent/futures/thread.py", line 31, in _python_exit
+t.join()  File "/mnt/d/Nhan/aixblock-working/ml-backend/Ministral-8B-Instruct-2410/venv/lib/python3.10/threading.py", line 1089, in join
+self._wait_for_tstate_lock()  File "/mnt/d/Nhan/aixblock-working/ml-backend/Ministral-8B-Instruct-2410/venv/lib/python3.10/threading.py", line 1105, in _wait_for_tstate_lock
+elif lock.acquire(block, timeout):KeyboardInterrupt: =s-hQYNrHif9GHIns--UnjuSJqTfweQe2tCr0CYp2Ljgas0JVv8IB2IkPSM5-5kWFVHNU3q34kLa5pBohm%7EAX4uNNDnsV7VGj9au6gtaLHdHs7eJUWe%7Ee7REjHAm0bg948plF75SeDFhdSHarpGR0ih-F19vhBhoO1oDjqKlj5jGo9jC8rcXvJrMXamAdENhVNAqxh1W1k81t8WBY9O1vKBVZTymaFCXPLagMWfwtCxjRM4KPvklTPQpPOjkZ3XMzVvcqhL7DYReRblzuE0r4-Qzs0paZvCezYeoaZOjEyvp2of7AMZb3qLSDTQrx8KUptCUCFJjVfWrmaln9HMINew__&Key-Pair-Id=K24J24Z295AEI9: HTTPSConnectionPool(host='cdn-lfs-us-1.hf.co', port=443): Read timed out.\n"b'Trying to resume download...\n'b"Error while downloading from https://cdn-lfs-us-1.hf.co/repos/1d/35/1d3531a0a837f361b2692485f5577e1b4dd16ad313de4ddf17d1847bc666ec78/888d9728a60744c4ce88984ae86952a6f07f47ee90588aa1faa4a5063951f0c1?response-content-disposition=inline%3B+filename*%3DUTF-8%27%27model-00002-of-00004.safetensors%3B+filename%3D%22model-00002-of-00004.safetensors%22%3B&Expires=1752254229&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc1MjI1NDIyOX19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2RuLWxmcy11cy0xLmhmLmNvL3JlcG9zLzFkLzM1LzFkMzUzMWEwYTgzN2YzNjFiMjY5MjQ4NWY1NTc3ZTFiNGRkMTZhZDMxM2RlNGRkZjE3ZDE4NDdiYzY2NmVjNzgvODg4ZDk3MjhhNjA3NDRjNGNlODg5ODRhZTg2OTUyYTZmMDdmNDdlZTkwNTg4YWExZmFhNGE1MDYzOTUxZjBjMT9yZXNwb25zZS1jb250ZW50LWRpc3Bvc2l0aW9uPSoifV19&Signature=aZA4-OI7LwfAcEazKkJOnRZsOwQP4Ad5WkKNZr%7E78wriGuwUHOfFMc6lsy6bYeg0TKVWEp9Dn5bVrVyOCluY6OxjIz8WDgbpERgSBtqxLePdJLfGPO0pL6khRxlE0V5lAkUpGRHX-jngK1q83K3IRPii6KHi9EN6OP1yu9btztxuTZ4gwQbijrPpnv4quWAz7bq2Y54xK2lJ-uPSZcClwkLV2HbsQerVATp7ZaTFyzE34frv4uqn8Pr%7EtcTHlx9ro0INab-K3zrRYHY4h8lmEn9FswoVjcrg-2nWNHzwW9hw0yLVn0U-9NZDv-AxQOfljWaeR9r9861SUu9pwhvbYA__&Key-Pair-Id=K24J24Z295AEI9: HTTPSConnectionPool(host='cdn-lfs-us-1.hf.co', port=443): Read timed out.\n"b'Trying to resume download...\n'b'\n'b'Fetching 4 files:   0%|          | 0/4 [00:20<?, ?it/s]Traceback (most recent call last):\n'b'  File "/mnt/d/Nhan/aixblock-working/ml-backend/Ministral-8B-Instruct-2410/venv/bin/accelerate", line 8, in <module>\n'b'    sys.exit(main())\n'b'  File "/mnt/d/Nhan/aixblock-working/ml-backend/Ministral-8B-Instruct-2410/venv/lib/python3.10/site-packages/accelerate/commands/accelerate_cli.py", line 50, in main\n'b'    args.func(args)\n'b'  File "/mnt/d/Nhan/aixblock-working/ml-backend/Ministral-8B-Instruct-2410/venv/lib/python3.10/site-packages/accelerate/commands/launch.py", line 1199, in launch_command\n'b'    simple_launcher(args)\n'b'  File "/mnt/d/Nhan/aixblock-working/ml-backend/Ministral-8B-Instruct-2410/venv/lib/python3.10/site-packages/accelerate/commands/launch.py", line 782, in simple_launcher\n'b'    process.wait()\n'b'  File "/mnt/d/Nhan/aixblock-working/ml-backend/Ministral-8B-Instruct-2410/venv/lib/python3.10/subprocess.py", line 1204, in wait\n'b'    return self._wait(timeout=timeout)\n'b'  File "/mnt/d/Nhan/aixblock-working/ml-backend/Ministral-8B-Instruct-2410/venv/lib/python3.10/subprocess.py", line 1938, in _wait\n'b'    (pid, sts) = self._try_wait(0)\n'b'  File "/mnt/d/Nhan/aixblock-working/ml-backend/Ministral-8B-Instruct-2410/venv/lib/python3.10/subprocess.py", line 1896, in _try_wait\n'b'    (pid, sts) = os.waitpid(self.pid, wait_flags)\n'b'KeyboardInterrupt\n'Exception ignored in: <module 'threading' from '/mnt/d/Nhan/aixblock-working/ml-backend/Ministral-8B-Instruct-2410/venv/lib/python3.10/threading.py'>Traceback (most recent call last):
+  File "/mnt/d/Nhan/aixblock-working/ml-backend/Ministral-8B-Instruct-2410/venv/lib/python3.10/threading.py", line 1538, in _shutdown
+lock.acquire()KeyboardInterrupt: 
